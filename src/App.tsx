@@ -1,12 +1,12 @@
 import { Button } from "./components/button";
 
-import "./style.css";
+import styles from "./app.module.css";
 
 export function App() {
     return (
-        <div className="container">
+        <div className={styles.container}>
             <Button name="Salvar" onClick={() => alert("Salvo")}></Button>
-            <Button name="Editar"></Button>
+            <span>0</span>
             <Button name="Excluir"></Button>
         </div>
     );
