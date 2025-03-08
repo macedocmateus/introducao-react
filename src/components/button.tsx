@@ -1,3 +1,7 @@
-export function Button() {
-    return <button>Click Here</button>;
+interface Props {
+    name: string;
+}
+
+export function Button({ name }: Props) {
+    return <button>{name}</button>;
 }
