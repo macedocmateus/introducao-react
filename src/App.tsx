@@ -1,21 +1,39 @@
 import "./global.css";
+import { useState } from "react";
 
 import { Button } from "./components/button";
-import { useMessage } from "./hooks/useMessage";
+// import { useMessage } from "./hooks/useMessage";
 
 import styles from "./app.module.css";
 
 export function App() {
-    const { show } = useMessage({ name: "Mateus", age: 22 });
+    const [count, setCount] = useState(0);
+
+    // const { show } = useMessage({ name: "Mateus", age: 22 });
+
+    function handleAdd() {
+        setCount(count + 1);
+    }
+
+    function handleRemove() {
+        setCount(count - 1);
+    }
 
     return (
         <div className={styles.container}>
             <Button
                 name="Adicionar"
-                onClick={() => show("Mensagem personalizada do meu hook")}
+                onClick={() => {
+                    handleAdd();
+                }}
             ></Button>
-            <span>0</span>
-            <Button name="Remover"></Button>
+            <span>{count}</span>
+            <Button
+                name="Remover"
+                onClick={() => {
+                    handleRemove();
+                }}
+            ></Button>
         </div>
     );
 }
