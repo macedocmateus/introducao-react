@@ -9,7 +9,7 @@ import styles from "./app.module.css";
 export function App() {
     const [count, setCount] = useState(0);
 
-    // const { show } = useMessage({ name: "Mateus", age: 22 });
+    // const message = useMessage({ name: "Mateus", age: 22 });
 
     function handleAdd() {
         setCount((prevState) => prevState + 1);
